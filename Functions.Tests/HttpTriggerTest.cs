@@ -17,7 +17,7 @@ namespace Functions.Tests
             var query = new Dictionary<string, StringValues>();
             query.TryAdd("name", "Tom");
 
-            var result = await HttpFunction.Run(TestFactory.HttpRequestSetup(query, ""), logger);
+            var result = await HttpTrigger.Run(TestFactory.HttpRequestSetup(query, ""), logger);
             var resultObject = (OkObjectResult) result;
             Assert.Equal("Hello, Tom", resultObject.Value);
         }
@@ -29,7 +29,7 @@ namespace Functions.Tests
             var query = new Dictionary<string, StringValues>();
             var body = "{\"name\":\"Tom\"}";
 
-            var result = await HttpFunction.Run(TestFactory.HttpRequestSetup(query, body), logger);
+            var result = await HttpTrigger.Run(TestFactory.HttpRequestSetup(query, body), logger);
             var resultObject = (OkObjectResult) result;
             Assert.Equal("Hello, Tom", resultObject.Value);
         }
@@ -40,7 +40,7 @@ namespace Functions.Tests
             var logger = TestFactory.CreateLogger();
             var query = new Dictionary<string, StringValues>();
             var body = "";
-            var result = await HttpFunction.Run(TestFactory.HttpRequestSetup(query, body), logger);
+            var result = await HttpTrigger.Run(TestFactory.HttpRequestSetup(query, body), logger);
             var resultObject = (OkObjectResult) result;
             Assert.Equal(
                 "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
