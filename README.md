@@ -10,7 +10,7 @@ The following functions are demonstration here.
 
 * [HttpTrigger](./Functions/Functions/HttpTrigger.cs)
 * [QueueTrigger](./Functions/Functions/QueueTrigger.cs)
-* [TimerTrigger])(./Functions/Functions/TimerTrigger.cs)
+* [TimerTrigger](./Functions/Functions/TimerTrigger.cs)
 * [DurableFunction](./Functions/Functions/DurableFunction.cs)
 
 ## Prerequisites
